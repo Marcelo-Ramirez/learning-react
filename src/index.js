@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// index.js
+// import { Greeting, UserCard } from "./Greeting.js";
+// import Product, {NavBar} from "./Product.js";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// const { Greeting, UserCard } = require("./Greeting.js");
+
+// const Product = require("./Product.js").default;
+// const { NavBar } = require("./Product.js");
+
+// ECMAScript6 Modules
+import { Greeting, UserCard } from "./Greeting";
+import { NavBar } from "./Product";
+import Product from "./Product";
+
+// CommonJS Modules
+// const { Greeting } = require("./Greeting");
+// const { UserCard } = require("./Greeting");
+// const Product = require("./Product").default;
+// const { NavBar } = require("./Product");
+
+const React = require("react");
+const ReactDOM = require("react-dom/client");
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <>
+    <NavBar />
+    <Product />
+    <Greeting />
+    <UserCard />
+    <Greeting />
+  </>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
